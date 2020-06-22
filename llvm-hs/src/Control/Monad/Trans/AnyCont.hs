@@ -21,7 +21,7 @@ instance Applicative (AnyContT m) where
 instance Monad m => Monad (AnyContT m) where
   AnyContT f >>= k = AnyContT $ f >>= unAnyContT . k
   return a = AnyContT $ return a
-  fail s = AnyContT (ContT (\_ -> Cont.fail s))
+  --fail s = AnyContT (ContT (\_ -> Cont.fail s))
 
 instance MonadFail m => MonadFail (AnyContT m) where
   fail s = AnyContT (ContT (\_ -> Fail.fail s))
