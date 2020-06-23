@@ -92,7 +92,8 @@ addLLVMToLdLibraryPath :: ConfigFlags -> IO ()
 addLLVMToLdLibraryPath confFlags = do
   llvmConfig <- getLLVMConfig confFlags
   [libDir] <- liftM lines $ llvmConfig ["--libdir"]
-  addToLdLibraryPath libDir
+  pure ()
+  --addToLdLibraryPath libDir
 
 -- | These flags are not relevant for us and dropping them allows
 -- linking against LLVM build with Clang using GCC
