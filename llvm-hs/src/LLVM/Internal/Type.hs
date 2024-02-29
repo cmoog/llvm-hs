@@ -9,6 +9,7 @@ import LLVM.Prelude
 import Control.Monad.AnyCont
 import Control.Monad.Catch
 import Control.Monad.State
+import Data.Function (fix)
 
 import qualified Data.Map as Map
 import qualified Data.Set as Set

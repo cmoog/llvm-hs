@@ -171,6 +171,7 @@ main = do
           newHsc buildInfo localBuildInfo =
 #endif
               PreProcessor {
+                  ppOrdering = unsorted,
                   platformIndependent = platformIndependent (origHsc buildInfo),
                   runPreProcessor = \inFiles outFiles verbosity -> do
                       llvmConfig <- getLLVMConfig (configFlags localBuildInfo)

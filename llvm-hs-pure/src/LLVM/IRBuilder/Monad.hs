@@ -1,6 +1,7 @@
 {-# LANGUAGE DefaultSignatures #-}
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE TypeOperators #-}
 {-# LANGUAGE GADTs #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
@@ -13,6 +14,8 @@ import LLVM.Prelude
 
 import Control.Monad.Cont
 import Control.Monad.Except
+import Control.Monad (MonadPlus)
+import Control.Monad.Fix (MonadFix)
 import qualified Control.Monad.Fail as Fail
 import Control.Monad.Identity
 import qualified Control.Monad.Writer.Lazy as Lazy
